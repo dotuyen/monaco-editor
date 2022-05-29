@@ -1,6 +1,28 @@
-<select name="userLanguage" class="userLanguage" [(ngModel)]="userLanguage" (change)="changeLanguage($event)">
-    <option *ngFor="let lang of availableLanguages" value="{{lang}}">
-        {{lang}}
-    </option>
+<select
+  name="userLanguage"
+  class="userLanguage"
+  [(ngModel)]="userLanguage"
+  (change)="changeLanguage($event)"
+>
+  <option *ngFor="let lang of availableLanguages" value="{{ lang }}">
+    {{ lang }}
+  </option>
 </select>
-<ngx-monaco-editor class="textEditorContainer" [options]="editorOptions" [(ngModel)]="userCode" (init)="editorInit($event)"></ngx-monaco-editor>
+
+<select
+  name="userTheme"
+  class="userTheme"
+  [(ngModel)]="userTheme"
+  (change)="changeTheme($event)"
+>
+  <option *ngFor="let theme of availableThemes" value="{{ theme }}">
+    {{ theme }}
+  </option>
+</select>
+
+<ngx-monaco-editor
+  class="textEditorContainer"
+  [options]="editorOptions"
+  [(ngModel)]="userCode"
+  (init)="editorInit($event)"
+></ngx-monaco-editor>
